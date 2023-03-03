@@ -7,58 +7,72 @@ public class Main {
         System.out.println("======================");
         System.out.println(". " +
                 "\n." +
-                "\n." +
-                "\n." +
-                "\n." +
-                "\n." +
-                "\n." +
                 "\n.");
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Please enter first number...");
-
-        int num1 = input.nextInt();
-
-        System.out.println("Please enter second number...");
-
-        int num2 = input.nextInt();
-
-        System.out.println("Please choose your operation... ");
-
-        int select = input.nextInt();
+        int select;
 
         int sum = 0;
 
         do {
 
-            switch (select) {
+            System.out.println("Please choose your operation... ");
+            System.out.println("1- addition " +
+                    "\n2- subtraction" +
+                    "\n3- divide" +
+                    "\n4- multiply " +
+                    "\n0- exit");
 
-                case 1:
-                    sum = num1 + num2 ;
+            System.out.println();
 
-                    break;
-                case 2:
-                    sum = num1 - num2 ;
-                    System.out.println(sum);
-                    break;
-                case 3:
-                    sum = num1 / num2 ;
-                    System.out.println(sum);
-                    break;
-                case 4:
-                    sum = num1 * num2;
-                    System.out.println(sum);
-                case 0:
-                    System.out.println(sum);
-                    System.out.println("good bye...");
-                    break;
+            select = input.nextInt();
 
+            if (select == 1 || select == 2 || select == 3 || select == 4) {
+
+                System.out.println("Please enter first number...");
+
+                int num1 = input.nextInt();
+
+                System.out.println("Please enter second number...");
+
+                int num2 = input.nextInt();
+
+                switch (select) {
+
+                    case 1:
+                        sum = num1 + num2 ;
+                        System.out.println("Result: "+sum);
+                        break;
+                    case 2:
+                        sum = num1 - num2 ;
+                        System.out.println("Result: "+sum);
+                        break;
+                    case 3:
+                        sum = num1 / num2 ;
+                        System.out.println("Result: "+sum);
+                        break;
+                    case 4:
+                        sum = num1 * num2;
+                        System.out.println("Result: "+sum);
+                    default:
+                        break;
+
+                }
+
+            } else if (select ==0) {
+
+                System.out.println("Good bye...");
+
+            }else {
+
+                System.out.println();
+
+                System.out.println("Please select '0, 1, 2, 3, 4'");
             }
 
         }while (select!=0);
 
-        System.out.println(sum);
 
     }
 }
