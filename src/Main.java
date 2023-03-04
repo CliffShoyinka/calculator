@@ -5,9 +5,7 @@ public class Main {
 
         System.out.println("Welcome to Calculator");
         System.out.println("======================");
-        System.out.println(". " +
-                "\n." +
-                "\n.");
+        System.out.println();
 
         Scanner input = new Scanner(System.in);
 
@@ -32,7 +30,7 @@ public class Main {
 
             select = input.nextInt();
 
-            if (select == 1 || select == 2 || select == 3 || select == 4 || select == 5) {
+            if (select == 1 || select == 2 || select == 3 || select == 4) {
 
 
                 System.out.println("Please enter second number...");
@@ -42,26 +40,28 @@ public class Main {
                 switch (select) {
 
                     case 1:
-                        num1 = num1 + num2 ;
-                        System.out.println("Result: "+num1);
+                        num1 = num1 + num2;
+                        System.out.println("Result: " + num1);
                         break;
                     case 2:
-                        num1 = num1 - num2 ;
-                        System.out.println("Result: "+num1);
+                        num1 = num1 - num2;
+                        System.out.println("Result: " + num1);
                         break;
                     case 3:
-                        num1 = num1 / num2 ;
-                        System.out.println("Result: "+num1);
+                        num1 = num1 / num2;
+                        System.out.println("Result: " + num1);
                         break;
                     case 4:
                         num1 = num1 * num2;
-                        System.out.println("Result: "+num1);
-                    case 5:
-                        num1 = 0;
+                        System.out.println("Result: " + num1);
                     default:
                         break;
 
                 }
+            } else if (select == 5) {
+
+                num1 = 0;
+                System.out.println("Result: "+num1);
 
             } else if (select ==0) {
 
@@ -71,7 +71,7 @@ public class Main {
 
                 System.out.println();
 
-                System.out.println("Please select '0, 1, 2, 3, 4'");
+                System.out.println("Please select '0, 1, 2, 3, 4, 5'");
             }
 
         }while (select!=0);
